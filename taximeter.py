@@ -14,7 +14,9 @@ def taximeter():
     """
     Función para manejar y mostrar las opciones del taxímetro.
     """
+   
     print("Welcome to the F5 Taximeter!")
+    print("Este es un taximetro donde puedes usar \n un start/stopped/move/finish")
     print("Available commands: 'start', 'stop', 'move', 'finish', 'exit'\n")
 
     trip_active = False
