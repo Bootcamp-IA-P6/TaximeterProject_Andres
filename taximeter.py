@@ -66,7 +66,7 @@ def taximeter():
             else:
                 moving_time += duration
 
-            # Calcula la tarifa total y muestra el resumen del viaje
+       
             total_fare = calculate_fare(stopped_time, moving_time)
             print(f"\n--- Trip Summary ---")
             print(f"Stopped time: {stopped_time:.1f} seconds")
