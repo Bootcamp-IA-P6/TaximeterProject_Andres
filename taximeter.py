@@ -1,4 +1,6 @@
+from logging_config import setup_logging
 import time
+import logging
 
 def calculate_fare(seconds_stopped, seconds_moving):
     """
@@ -10,10 +12,15 @@ def calculate_fare(seconds_stopped, seconds_moving):
     print(f"Este es el total: {fare}")
     return fare
 
+setup_logging()
+
 def taximeter():
+    logging.info("Prueba de logging")
+
     """
     Función para manejar y mostrar las opciones del taxímetro.
     """
+   
     print("Welcome to the F5 Taximeter!")
     print("Available commands: 'start', 'stop', 'move', 'finish', 'exit'\n")
 
@@ -28,6 +35,7 @@ def taximeter():
         command = input("> ").strip().lower()
 
         if command == "start":
+            logging.info("Trip stared.")
             if trip_active:
                 print("Error: A trip is already in progress.")
                 continue
@@ -46,6 +54,7 @@ def taximeter():
             # Calcula el tiempo del estado anterior
             duration = time.time() - state_start_time
             if state == 'stopped':
+                logging.info(f"State changed to {state}.")
                 stopped_time += duration
             else:
                 moving_time += duration
@@ -62,12 +71,14 @@ def taximeter():
             # Agrega tiempo del último estado
             duration = time.time() - state_start_time
             if state == 'stopped':
+                logging.info(f"State changed to {state}.")
                 stopped_time += duration
             else:
                 moving_time += duration
 
-            # Calcula la tarifa total y muestra el resumen del viaje
+       
             total_fare = calculate_fare(stopped_time, moving_time)
+            logging.info(f"Trip finished. Total fare: {total_fare:.2f}")
             print(f"\n--- Trip Summary ---")
             print(f"Stopped time: {stopped_time:.1f} seconds")
             print(f"Moving time: {moving_time:.1f} seconds")
@@ -83,6 +94,7 @@ def taximeter():
             break
 
         else:
+            logging.warning(f"Invalid command: {command}")
             print("Unknown command. Use: start, stop, move, finish, or exit.")
 
 if __name__ == "__main__":
