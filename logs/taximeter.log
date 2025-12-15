@@ -1,0 +1,18 @@
+2025-12-11 15:00:17,409 - INFO - Logging system initialized
+2025-12-11 15:00:17,409 - INFO - Prueba de logging
+2025-12-11 15:00:38,735 - INFO - Trip stared.
+2025-12-11 15:00:49,828 - INFO - State changed to stopped.
+2025-12-11 15:00:51,358 - INFO - State changed to stopped.
+2025-12-11 15:00:54,146 - INFO - Trip finished. Total fare: 0.39
+2025-12-11 15:04:56,790 - INFO - Logging system initialized
+2025-12-11 15:04:56,791 - INFO - Prueba de logging
+2025-12-11 15:04:59,550 - INFO - Trip stared.
+2025-12-11 15:05:04,327 - INFO - State changed to stopped.
+2025-12-11 15:05:05,880 - INFO - State changed to stopped.
+2025-12-11 15:05:09,709 - INFO - Trip finished. Total fare: 0.32
+2025-12-15 06:06:05,170 - INFO - Logging system initialized
+2025-12-15 06:06:05,170 - INFO - Prueba de logging
+2025-12-15 06:06:12,719 - INFO - Trip stared.
+2025-12-15 06:06:17,066 - INFO - State changed to stopped.
+2025-12-15 06:06:19,031 - INFO - State changed to stopped.
+2025-12-15 06:06:22,444 - INFO - Trip finished. Total fare: 0.30
