@@ -1,6 +1,8 @@
 from logging_config import setup_logging
 import time
 import logging
+import os
+from datetime import datetime
 
 def calculate_fare(seconds_stopped, seconds_moving):
     """
@@ -11,6 +13,28 @@ def calculate_fare(seconds_stopped, seconds_moving):
     fare = seconds_stopped * 0.02 + seconds_moving * 0.05
     print(f"Este es el total: {fare}")
     return fare
+
+
+
+HISTORY_FILE = "data/historial.txt"
+
+def save_trip_history(stopped, moving, fare):
+    """
+    Guarda el resumen del viaje en data/historial.txt.
+    """
+    os.makedirs("data", exist_ok=True)
+
+    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M")
+
+    entry = (
+        f"{timestamp} | "
+        f"Stopped={stopped:.1f}s | "
+        f"Moving={moving:.1f}s | "
+        f"Fare={fare:.2f}€\n"
+    )
+
+    with open(HISTORY_FILE, "a", encoding="utf-8") as file:
+        file.write(entry)
 
 setup_logging()
 
@@ -75,10 +99,11 @@ def taximeter():
                 stopped_time += duration
             else:
                 moving_time += duration
-
-       
+                
             total_fare = calculate_fare(stopped_time, moving_time)
-            logging.info(f"Trip finished. Total fare: {total_fare:.2f}")
+
+            save_trip_history(stopped_time, moving_time, total_fare)
+            logging.info("Trip saved to history.")
             print(f"\n--- Trip Summary ---")
             print(f"Stopped time: {stopped_time:.1f} seconds")
             print(f"Moving time: {moving_time:.1f} seconds")
