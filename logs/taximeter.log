@@ -16,3 +16,9 @@
 2025-12-15 06:06:17,066 - INFO - State changed to stopped.
 2025-12-15 06:06:19,031 - INFO - State changed to stopped.
 2025-12-15 06:06:22,444 - INFO - Trip finished. Total fare: 0.30
+2025-12-15 07:52:56,316 - INFO - Logging system initialized
+2025-12-15 07:52:56,316 - INFO - Prueba de logging
+2025-12-15 07:53:00,964 - INFO - Trip stared.
+2025-12-15 07:53:03,518 - INFO - State changed to stopped.
+2025-12-15 07:53:05,483 - INFO - State changed to stopped.
+2025-12-15 07:53:08,900 - INFO - Trip saved to history.
